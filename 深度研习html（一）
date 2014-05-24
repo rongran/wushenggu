@@ -1,0 +1,74 @@
+题记：这是我首次试水技术性教程，有不到之处，还请指教。
+html学习起来很简单，而且要掌握它也不是很困难，但是其中涉及到的一些细节性的东西往往会被我们忽略，而了解这些细节对我们的学习是有极大的裨益的，下面就听我娓娓道来吧。
+第一次开讲，先从文档声明讲起：
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+对于这个标记，我相信写过网页的同学，一定不会陌生 ，没错，它就是一个网页中最开始的部分，我们大多数时候都是复制粘贴这段代码，几乎不会有人去手写，这可能都已经成为一种习惯了，现在就让我们看看它到底是什么。
+<!DOCTYPE>的定义：
+
+     <!DOCTYPE>声明位于文档中的最前面的位置，处于<html>标签之前。此标签可告知浏览器文档使用哪种HTML或XHTML规范。
+
+该标签可声明三种DTD类型，分别表示严格版本、过渡版本以及基于框架的HTML版本。（假如文档中的标记不遵循doctype声明所指定的DTD，这个文档除了不能通过代码校验之外，还有可能无法在浏览器中正确显示。） 
+<!DOCTYPE>的用法：
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+解析：在上面的声明中，声明了文档的根元素是 html，它在公共标识符被定义为 "-//W3C//DTD XHTML 1.0 Strict//EN" 的 DTD 中进行了定义。浏览器将明白如何寻找匹配此公共标识符的 DTD。如果找不到，浏览器将使用公共标识符后面的 URL 作为寻找 DTD 的位置。
+
+     -   :   表示组织名称未注册。Internet 工程任务组(IETF)和万维网协会(W3C)并非注册的 ISO 组织。
+
+              +为默认,表示组织名称已注册。
+
+ DTD  :   指定公开文本类，即所引用的对象类型。 默认为DTD。
+
+HTML :   指定公开文本描述，即对所引用的公开文本的唯一描述性名称。后面可附带版本号。默认为HTML。
+
+ URL  ：  指定所引用对象的位置。
+
+  Strict：排除所有 W3C 专家希望逐步淘汰的代表性属性和元素。 
+三种HTML文档类型:
+
+HTML 4.01 规定了三种文档类型：Strict、Transitional 以及 Frameset。
+
+a ) 如果需要干净的标记，免于表现层的混乱，用HTML Strict DTD类型：
+
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" " http://www.w3.org/TR/html4/strict.dtd">
+
+b )Transitional DTD 可包含 W3C 所期望移入样式表的呈现属性和元素. 如果用户使用了不支持层叠样式表（CSS）的浏览器以至于你不得不使用 HTML 的呈现特性时，用     Transitional DTD 类型：
+
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" " http://www.w3.org/TR/html4/loose.dtd">
+
+c ) Frameset DTD 被用于带有框架的文档。除 frameset 元素取代了 body 元素之外，Frameset DTD 等同于 Transitional DTD：
+
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" " http://www.w3.org/TR/html4/frameset.dtd">
+三种 XML 文档类型：
+
+XHTML 1.0 规定了三种 XML 文档类型：Strict、Transitional 以及 Frameset。
+
+a ) 如果需要干净的标记，免于表现层的混乱，用XHTML Strict DTD类型：
+
+     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+b )Transitional DTD 可包含 W3C 所期望移入样式表的呈现属性和元素. 如果用户使用了不支持层叠样式表（CSS）的浏览器以至于你不得不使用 HTML 的呈现特性时，用     Transitional DTD 类型：
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+c ) Frameset DTD 被用于带有框架的文档。除 frameset 元素取代了 body 元素之外，Frameset DTD 等同于 Transitional DTD：
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+选择正确的doctype：
+
+为了获得正确的doctype声明，关键就是让dtd与文档所遵循的标准对应。
+
+例如，假定文档遵循的是xhtml 1.0 strict标准，文档的doctype声明就应该引用相应的dtd。
+
+另一方面，如果doctype声明指定的是xhtml dtd，但文档包含的是旧式风格的html标记，就是不恰当的；类似地，如果doctype声明指定的是html dtd，但文档包含的是
+
+xhtml 1.0 strict标记，同样是不恰当的。
+
+如果没有指定有效的doctype声明，大多数浏览器都会使用一个内建的默认dtd。在这种情况下， 浏览器会用内建的dtd来试着显示你所指定的标记(不过这是页面写得太糟糕的时候的做法)。
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+HTML5的DOCTYPE：
+HTML 4.01 中的!DOCTYPE需要对 DTD 进行引用，因为 HTML 4.01 基于标准通用标记语言。而HTML 5基于XML（标准通用标记语言的子集），因此不需要对 DTD 进行引用，但是需要!DOCTYPE来规范浏览器的行为（让浏览器按照它们应该的方式来运行）。 
+
+ 
