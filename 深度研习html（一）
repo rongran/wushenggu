@@ -72,3 +72,4 @@ HTML5的DOCTYPE：
 HTML 4.01 中的!DOCTYPE需要对 DTD 进行引用，因为 HTML 4.01 基于标准通用标记语言。而HTML 5基于XML（标准通用标记语言的子集），因此不需要对 DTD 进行引用，但是需要!DOCTYPE来规范浏览器的行为（让浏览器按照它们应该的方式来运行）。 
 
  
+本文同步github地址：https://github.com/rongran/wushenggu/
