@@ -1,0 +1,17 @@
+上一次，我们讨论了文档声明，今天我们来学习html标签。
+
+一个HTML文档中包含的任何内容都是HTML元素，这些元素的根是html。html是HTML文档的最外层元素，所有的其他元素都被包含在该元素内。
+
+浏览器在遇到html根元素时，将它理解为HTML文档。在用法上，HTML5与HTML4.01中的html根元素没有太大的区别，主要区别就是xmlns属性。该属性在HTML4.01中是必须的，用于对HTML文档进行验证；而在HTML5中该属性可以忽略，或者认为该属性有一个默认值“html://www.w3.org/1999/xhtml”.
+
+HTML5为html根元素新增了一个manifest属性，用于指向一个保存文档缓存信息的URl。另外，使用lang属性可以定义HTML文档使用的语言，这对搜索引擎和浏览器非常有帮助，默认值是en。
+
+根据W3C推荐标准应该通过html根元素的lang属性对页面中的主要语言进行声明。HTML5的示例代码如下：
+<html lang="en">
+</html>
+
+在HTML4.01中，采用如下方式在html根元素中对语言进行声明：
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en" xml:lang="en">
+</html>
+ 
+ 本文同步github地址： https://github.com/rongran/wushenggu/
