@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+body{padding:0; margin:0; font-size:84%; background:#FFF; color:#333333; font-family:'宋体',Verdana, Geneva, sans-serif;}
+ul,li,form,h1,h2,h3,h4,h5,h6,p{padding:0; margin:0; list-style-type:none;}
+i,cite{font-style:normal;}
+a{color:#34538b; text-decoration:underline;}
+a:hover{color:#F30; text-decoration:underline;}
+
+
+.divcss5_title{font-size:1.6em; text-align:center; margin:20px 0;}
+.divcss5_main_con{padding:0 20px 20px; margin:0 auto; text-align:center; width:480px}
+
+
+
