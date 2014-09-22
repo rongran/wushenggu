@@ -1,0 +1,52 @@
+    <script>
+      // 在HTML中调用box()函数
+      // <a href="javascript:void(0)" onclick="box()"></a>
+      // 添加弹出层，赋id为tip_box
+      // <div id="tip_box">
+      // 添加关闭按钮，赋id为close_box
+      //   <div id="close_box">x</div>
+      //   <p>hello</p>
+      // </div>
+      // author : 木吉生
+      function box() {
+        var tip_box=document.getElementById("tip_box")   //获取弹出层ID
+        var wrap_box=document.createElement("div")       //创建遮罩层节点
+        var close_box=document.getElementById("close_box")    //获取关闭按钮ID
+        var tip_box_w=400   //弹出层宽度
+        var tip_box_h=200   //弹出层高度
+        var tip_box_background="#fff"  //弹出层背景颜色
+        var tip_box_x=(innerWidth-tip_box_w)/2  //弹出层横坐标
+        var tip_box_y=(innerHeight-tip_box_h)/2   //弹出层纵坐标
+        var wrap_box_w=innerWidth  //遮罩层宽度
+        var wrap_box_h=innerHeight  //遮罩层高度
+        wrap_box.style.position="fixed";  
+        wrap_box.style.background="rgba(0,0,0,0.5)";
+        wrap_box.style.width=wrap_box_w+"px";  
+        wrap_box.style.height=wrap_box_h+"px";
+        wrap_box.style.zIndex=98;
+        wrap_box.style.top=0+"px";
+        close_box.style.position="absolute";
+        close_box.style.width=30+"px";
+        close_box.style.height=30+"px";
+        close_box.style.top=0+"px";
+        close_box.style.right=0+"px";
+        close_box.style.background="rgb(0,0,0)";
+        close_box.style.color="rgb(255,255,255)";
+        close_box.style.lineHeight=30+"px";
+        close_box.style.textAlign="center";
+        close_box.style.cursor="pointer";
+        close_box.addEventListener("click",function(){
+          tip_box.style.display="none";
+          wrap_box.remove()
+        })
+          tip_box.style.display="block";
+          tip_box.style.width=tip_box_w+"px";
+          tip_box.style.height=tip_box_h+"px";
+          tip_box.style.zIndex=99;
+          tip_box.style.position="absolute";
+          tip_box.style.top=tip_box_y+"px";
+          tip_box.style.left=tip_box_x+"px";
+          tip_box.style.background=tip_box_background;
+          document.body.appendChild(wrap_box)
+        };
+      </script>
