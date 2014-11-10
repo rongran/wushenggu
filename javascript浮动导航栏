@@ -3,10 +3,14 @@
 <script type="text/javascript"> 
 window.onscroll=function(){
   var t = document.documentElement.scrollTop || document.body.scrollTop;
+  var nav=document.getElementById("nav")
   if(t>90){
-    $(".nav").css({"position":"fixed","z-index":9999,"top":0,"width":"100%"});
+  	nav.style.position="fixed"
+  	nav.style.zIndex="9999"
+  	nav.style.top="0"
+  	nav.style.width="100%"
   }else{
-    $(".nav").css("position","static");
+  	nav.style.position="static"
   }
 }
 </script> 
