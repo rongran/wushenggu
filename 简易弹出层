@@ -1,6 +1,6 @@
     <script>
       // 在HTML中调用box()函数
-      // <a href="javascript:void(0)" onclick="box()"></a>
+      // <a href="javascript:void(0)" onclick="box(id,w,h)"></a>
       // 添加弹出层，赋id为tip_box
       // <div id="tip_box" style="display:none">
       // 添加关闭按钮，赋id为close_box
