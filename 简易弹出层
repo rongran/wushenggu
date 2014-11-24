@@ -8,12 +8,12 @@
       //   <p>hello</p>
       // </div>
       // author : 木吉生
-      function box() {
-        var tip_box=document.getElementById("tip_box")   //获取弹出层ID
+      function box(id,w,h) {
+        var tip_box=document.getElementById(id)   //获取弹出层ID
         var wrap_box=document.createElement("div")       //创建遮罩层节点
         var close_box=document.getElementById("close_box")    //获取关闭按钮ID
-        var tip_box_w=400   //弹出层宽度
-        var tip_box_h=200   //弹出层高度
+        var tip_box_w=w   //弹出层宽度
+        var tip_box_h=h   //弹出层高度
         var tip_box_background="#fff"  //弹出层背景颜色
         var tip_box_x=(innerWidth-tip_box_w)/2  //弹出层横坐标
         var tip_box_y=(innerHeight-tip_box_h)/2   //弹出层纵坐标
