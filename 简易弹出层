@@ -3,15 +3,13 @@
       // <a href="javascript:void(0)" onclick="box(id,w,h)"></a>
       // 添加弹出层，赋id为tip_box
       // <div id="tip_box" style="display:none">
-      // 添加关闭按钮，赋id为close_box
-      //   <div id="close_box">x</div>
       //   <p>hello</p>
       // </div>
       // author : 木吉生
       function box(id,w,h) {
         var tip_box=document.getElementById(id)   //获取弹出层ID
         var wrap_box=document.createElement("div")       //创建遮罩层节点
-        var close_box=document.getElementById("close_box")    //获取关闭按钮ID
+        var close_box=document.createElement("div")      //创建关闭按钮
         var tip_box_w=w   //弹出层宽度
         var tip_box_h=h   //弹出层高度
         var tip_box_background="#fff"  //弹出层背景颜色
@@ -25,6 +23,7 @@
         wrap_box.style.height=wrap_box_h+"px";
         wrap_box.style.zIndex=98;
         wrap_box.style.top=0+"px";
+        close_box.innerHTML="x";
         close_box.style.position="absolute";
         close_box.style.width=30+"px";
         close_box.style.height=30+"px";
@@ -48,5 +47,6 @@
           tip_box.style.left=tip_box_x+"px";
           tip_box.style.background=tip_box_background;
           document.body.appendChild(wrap_box)
+          tip_box.appendChild(close_box)
         };
       </script>
