@@ -19,6 +19,7 @@
         var tip_box_y=(innerHeight-tip_box_h)/2   //弹出层纵坐标
         var wrap_box_w=innerWidth  //遮罩层宽度
         var wrap_box_h=innerHeight  //遮罩层高度
+        document.body.style.overflow="hidden";
         wrap_box.style.position="fixed";  
         wrap_box.style.background="rgba(0,0,0,0.5)";
         wrap_box.style.width=wrap_box_w+"px";  
