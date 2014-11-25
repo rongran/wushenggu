@@ -6,6 +6,8 @@
       //   <p>hello</p>
       // </div>
       // author : 木吉生
+      // QQ : 857382251
+      // from : https://github.com/rongran/wushenggu/blob/master/简易弹出层
       function box(id,w,h) {
         var tip_box=document.getElementById(id)   //获取弹出层ID
         var wrap_box=document.createElement("div")       //创建遮罩层节点
