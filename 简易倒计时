@@ -1,0 +1,44 @@
+// 简易倒计时
+// 只适用于"xx:xx"形式的分秒倒计时
+// author : 木吉生
+// QQ : 857382251
+var rest=function(time,tag,alt){
+    this.tag=tag; //获取倒计时dom节点，仅支持id
+    this.t=time;  //设置倒计时开始时间: "xx:xx"
+    this.init();  //执行倒计时初始化方法
+    this.alt=alt; //设置倒计时结束后显示内容
+}
+rest.prototype={
+    init:function(){  //初始化方法
+        if(this.one()==0&&this.two()==0&&this.three()==0&&this.four()==0){
+            this.end()
+        }else{
+            this.show()
+        }
+        
+    },
+    one:function(){  //返回倒计时时间的第一位数字（自左向右）
+        return this.t.charAt(0)
+    },
+    two:function(){  //返回倒计时时间的第二位数字（自左向右）
+        return this.t.charAt(1)
+    },
+    three:function(){ //返回倒计时时间的第三位数字（自左向右）
+        return this.t.charAt(3)
+    },
+    four:function(){  //返回倒计时时间的第四位数字（自左向右）
+        return this.t.charAt(4)
+    },
+    set:function(time){ //设置倒计时时间方法
+        this.t=time
+    },
+    setTag:function(tag){ //设置倒计时结束后显示内容方法
+        this.tag=tag
+    },
+    show:function(){     //显示倒计时
+        document.getElementById(this.tag).innerHTML=this.t
+    },
+    end:function(){      //显示倒计时结束后显示内容
+        document.getElementById(this.tag).innerHTML=this.alt
+    }
+}
