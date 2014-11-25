@@ -2,6 +2,7 @@
 // 只适用于"xx:xx"形式的分秒倒计时
 // author : 木吉生
 // QQ : 857382251
+// from : https://github.com/rongran/wushenggu/blob/master/简易倒计时
 var rest=function(time,tag,alt){
     this.tag=tag; //获取倒计时dom节点，仅支持id
     this.t=time;  //设置倒计时开始时间: "xx:xx"
