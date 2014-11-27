@@ -1,55 +1,65 @@
-    <script>
-      // 在HTML中调用box()函数
-      // <a href="javascript:void(0)" onclick="box(id,w,h)"></a>
-      // 添加弹出层，赋id为tip_box
-      // <div id="tip_box" style="display:none">
-      //   <p>hello</p>
-      // </div>
-      // author : 木吉生
-      // QQ : 857382251
-      // from : https://github.com/rongran/wushenggu/blob/master/简易弹出层
-      function box(id,w,h) {
-        var tip_box=document.getElementById(id)   //获取弹出层ID
-        var wrap_box=document.createElement("div")       //创建遮罩层节点
-        var close_box=document.createElement("div")      //创建关闭按钮
-        var tip_box_w=w   //弹出层宽度
-        var tip_box_h=h   //弹出层高度
-        var tip_box_background="#fff"  //弹出层背景颜色
-        var tip_box_x=(innerWidth-tip_box_w)/2  //弹出层横坐标
-        var tip_box_y=(innerHeight-tip_box_h)/2   //弹出层纵坐标
-        var wrap_box_w=innerWidth  //遮罩层宽度
-        var wrap_box_h=innerHeight  //遮罩层高度
-        document.body.style.overflow="hidden";
-        wrap_box.style.position="fixed";  
+// 在HTML中调用box()函数
+// <a href="javascript:void(0)" onclick="box(id,w,h)"></a>
+// 添加弹出层，赋id为tip_box
+// <div id="tip_box" style="display:none">
+//   <p>hello</p>
+// </div>
+// author : 木吉生
+// QQ : 857382251
+// from : https://github.com/rongran/wushenggu/blob/master/简易弹出层
+// id 弹出层id
+// w 弹出层宽度
+// h 弹出层高度
+// z 遮罩层层级(z-index)
+function box(id,w,h,z) {
+    var zIndex=z||98     //设置遮罩层层级
+    var tip_box=document.getElementById(id)   //获取弹出层ID
+    var wrap_box=document.createElement("div")       //创建遮罩层节点
+    var close_box=document.createElement("div")      //创建关闭按钮
+    var tip_box_w=w   //弹出层宽度
+    var tip_box_h=h   //弹出层高度
+    var tip_box_background="#fff"  //弹出层背景颜色
+    var screenWidth=window.innerWidth || document.documentElement.clientWidth; //获取屏幕宽度
+    var screenHeight=window.innerHeight || document.documentElement.clientHeight; //获取屏幕高度
+    var tip_box_x=(screenWidth-tip_box_w)/2  //弹出层横坐标
+    var tip_box_y=(screenHeight-tip_box_h)/2   //弹出层纵坐标
+    var wrap_box_w=screenWidth  //遮罩层宽度
+    var wrap_box_h=screenHeight  //遮罩层高度
+    document.body.style.overflow="hidden"
+    wrap_box.style.position="fixed";  
+    if(!-[1, ]){
+        wrap_box.style.background="rgb(255,255,255)";
+    }else{
         wrap_box.style.background="rgba(0,0,0,0.5)";
-        wrap_box.style.width=wrap_box_w+"px";  
-        wrap_box.style.height=wrap_box_h+"px";
-        wrap_box.style.zIndex=98;
-        wrap_box.style.top=0+"px";
-        close_box.innerHTML="x";
-        close_box.style.position="absolute";
-        close_box.style.width=30+"px";
-        close_box.style.height=30+"px";
-        close_box.style.top=0+"px";
-        close_box.style.right=0+"px";
-        close_box.style.background="rgb(0,0,0)";
-        close_box.style.color="rgb(255,255,255)";
-        close_box.style.lineHeight=30+"px";
-        close_box.style.textAlign="center";
-        close_box.style.cursor="pointer";
-        close_box.addEventListener("click",function(){
-          tip_box.style.display="none";
-          wrap_box.remove()
-        })
-          tip_box.style.display="block";
-          tip_box.style.width=tip_box_w+"px";
-          tip_box.style.height=tip_box_h+"px";
-          tip_box.style.zIndex=99;
-          tip_box.style.position="absolute";
-          tip_box.style.top=tip_box_y+"px";
-          tip_box.style.left=tip_box_x+"px";
-          tip_box.style.background=tip_box_background;
-          document.body.appendChild(wrap_box)
-          tip_box.appendChild(close_box)
-        };
-      </script>
+    }
+    wrap_box.style.width=wrap_box_w+"px";  
+    wrap_box.style.height=wrap_box_h+"px";
+    wrap_box.style.zIndex=zIndex;
+    wrap_box.style.top=0+"px";
+    close_box.innerHTML="x";
+    close_box.style.position="absolute";
+    close_box.style.width=30+"px";
+    close_box.style.height=30+"px";
+    close_box.style.top=0+"px";
+    close_box.style.right=0+"px";
+//    close_box.style.background="rgb(0,0,0)";
+//    close_box.style.color="rgb(255,255,255)";
+    close_box.style.lineHeight=30+"px";
+    close_box.style.textAlign="center";
+    close_box.style.cursor="pointer";
+    close_box.onclick=function(){
+        tip_box.style.display="none";
+        document.body.style.overflow="scroll"
+        wrap_box.parentNode.removeChild(wrap_box)
+    }
+    tip_box.style.display="block";
+    tip_box.style.width=tip_box_w+"px";
+    tip_box.style.height=tip_box_h+"px";
+    tip_box.style.zIndex=zIndex+1;
+    tip_box.style.position="fixed";
+    tip_box.style.top=tip_box_y+"px";
+    tip_box.style.left=tip_box_x+"px";
+    tip_box.style.background=tip_box_background;
+    document.body.appendChild(wrap_box)
+    tip_box.appendChild(close_box)
+};
