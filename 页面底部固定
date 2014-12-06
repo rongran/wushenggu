@@ -1,3 +1,5 @@
-if(document.body.clientHeight<document.body.scrollHeight){
-		$("#footer").css({"position":"absolute","bottom":"0px"})
+<script>
+	if(document.body.clientHeight<window.screen.availHeight){
+		$("#footer").css({"position":"absolute","bottom":"0px","left":"0px"})
 	}
+</script>
